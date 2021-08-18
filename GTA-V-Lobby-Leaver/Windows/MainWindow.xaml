@@ -1,0 +1,51 @@
+﻿<Window x:Class="GTA_V_Lobby_Leaver.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Lobby Leaver V1.0.7" 
+        Height="251" Width="300"
+        ResizeMode="CanMinimize" FontSize="14" FontFamily="Calibri" WindowStartupLocation="CenterScreen"
+        SizeChanged="Window_SizeChanged" Loaded="Window_Loaded" Closing="Window_Closing">
+
+    <Grid Background="#1a2433">
+        <Border BorderThickness="1" BorderBrush="#374c70" Margin="5" Background="#202c40">
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="21"/>
+                    <RowDefinition Height="42"/>
+                    <RowDefinition Height="21"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="21"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Border x:Name="brdStatus" Grid.Row="0" Background="#28374f" BorderBrush="#374c70" BorderThickness="0 1 0 1"/>
+                <TextBlock x:Name="txtStatus" Foreground="#DADADA" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="txtPID" Grid.Row="1" Foreground="#DADADA" VerticalAlignment="Top" HorizontalAlignment="Left"  Margin="5 3 0 0"/>
+                <TextBlock x:Name="txtRuntime" Grid.Row="1" Foreground="#DADADA" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="5 0 0 3"/>
+
+                <Border Grid.Row="2" Background="#28374f" BorderBrush="#374c70" BorderThickness="0 1 0 1"/>
+                <TextBlock Grid.Row="2" Foreground="#DADADA" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Lobby"/>
+                <Button x:Name="btnLeave" Grid.Row="3" Background="#3b4b66" Foreground="#DADADA" BorderBrush="#374c70" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="23" Margin="8" IsEnabled="False" Click="BtnLeave_Click"/>
+                <ProgressBar x:Name="barLeave" Grid.Row="3" Foreground="#9c4856" Background="#455266" BorderBrush="#374c70" BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="15" Margin="10 8"/>
+
+                <Border Grid.Row="4" Background="#28374f" BorderBrush="#374c70" BorderThickness="0 1 0 1"/>
+                <TextBlock x:Name="txtProcess" Grid.Row="4" Foreground="#DADADA" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Button x:Name="btnStart" Grid.Row="5" Background="#3b4b66" Foreground="#DADADA" BorderBrush="#374c70" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="23" Margin="10 0" Click="BtnStart_Click"/>
+
+            </Grid>
+        </Border>
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem x:Name="mnuLanguage" Click="MnuLanguage_Click"/>
+                <MenuItem x:Name="mnuMilliseconds" IsCheckable="True"/>
+                <Separator Background="#374c70"/>
+                <MenuItem x:Name="mnuTopMost" IsCheckable="True"/>
+                <MenuItem x:Name="mnuSaveWindowPosition" IsCheckable="True"/>
+            </ContextMenu>
+        </Grid.ContextMenu>
+    </Grid>
+</Window>
